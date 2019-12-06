@@ -8,15 +8,40 @@ namespace CheckList
     {
         public string name;
         public bool done;
+    }
 
-        public void ToggleDone ()
+    class List : Listable
+    {
+        public List<ListElement> elements;
+
+        public List(string name)
         {
-            done = !done;
+            this.name = name;
+            this.done = false;
+            elements = new List<ListElement>();
         }
 
-        public virtual void Save ()
+        public void UpdateDone ()
         {
-            throw new NotImplementedException();
+            for(int i = 0; i < elements.Count; i++)
+            {
+                if (!elements[i].done)
+                {
+                    done = false;
+                    return;
+                }
+            }
+
+            done = true;
+        }
+    }
+
+    class ListElement : Listable
+    {
+        public ListElement(string name)
+        {
+            this.name = name;
+            this.done = false;
         }
     }
 }

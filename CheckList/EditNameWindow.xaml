@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckList"
         mc:Ignorable="d"
-        Title="Edit Name" Height="100" Width="300">
+        Title="Edit Name" Height="100" Width="300" WindowStartupLocation="CenterOwner" Topmost="True">
     <Grid>
         <TextBox x:Name="EditNameTextbox" HorizontalAlignment="Stretch" Margin="16,0,80,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center"/>
         <Button Content="Submit" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,16,0" Width="48" Click="Button_Click"/>
