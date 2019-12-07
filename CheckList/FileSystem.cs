@@ -6,8 +6,7 @@ namespace CheckList
 {
     class FileSystem
     {
-        public static string SAVE_DIRECTORY = System.IO.Directory.GetCurrentDirectory();
-        public static string FILE_NAME = @"\list.txt";
+        public static string SAVE_DIRECTORY = System.IO.Directory.GetCurrentDirectory() + @"\startupList.txt";
 
         public void Save(List list)
         {
@@ -27,18 +26,18 @@ namespace CheckList
                 lines[1 + i] += list.elements[i].name;
             }
 
-            System.IO.File.WriteAllLines(SAVE_DIRECTORY + FILE_NAME, lines);
+            System.IO.File.WriteAllLines(SAVE_DIRECTORY, lines);
         }
 
         public List Load ()
         {
-            if (!System.IO.File.Exists(SAVE_DIRECTORY + FILE_NAME))
+            if (!System.IO.File.Exists(SAVE_DIRECTORY))
             {
-                return new List("ListApp");
+                return new List("New List");
             }
             else
             {
-                string[] lines = System.IO.File.ReadAllLines(SAVE_DIRECTORY + FILE_NAME);
+                string[] lines = System.IO.File.ReadAllLines(SAVE_DIRECTORY);
                 List list = new List(lines[0]);
 
                 for (int i = 1; i < lines.Length; i++)

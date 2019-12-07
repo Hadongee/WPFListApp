@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace CheckList
 {
@@ -27,7 +28,28 @@ namespace CheckList
             this.Closing += new System.ComponentModel.CancelEventHandler(MainWindow_Closing);
         }
 
-        private void MainWindow_Closing(object sender, EventArgs e)
+        private void ResetUI ()
+        {
+            ChangeListName("New List");
+            StackPanel listPanel = (StackPanel)this.FindName("ListPanel");
+            listPanel.Children.Clear();
+        }
+
+        private void LoadUI ()
+        {
+            ResetUI();
+
+            List list = new FileSystem().Load();
+
+            ChangeListName(list.name);
+
+            for (int i = 0; i < list.elements.Count; i++)
+            {
+                CreateNewListElement(list.elements[i].name, list.elements[i].done, false);
+            }
+        }
+
+        private void SaveUI ()
         {
             List list = new List(GetListName());
 
@@ -45,26 +67,24 @@ namespace CheckList
             new FileSystem().Save(list);
         }
 
+        private void MainWindow_Closing(object sender, EventArgs e)
+        {
+            SaveUI();
+        }
+
         private void Initialize ()
         {
-            List list = new FileSystem().Load();
-
-            ChangeListName(list.name);
-
-            for (int i = 0; i < list.elements.Count; i++)
-            {
-                CreateNewListElement(list.elements[i].name, list.elements[i].done, false);
-            }
+            LoadUI();
         }
 
         private string GetListName ()
         {
-            return ((TextBlock)this.FindName("ListName")).Text;
+            return (string)((CheckBox)this.FindName("ListName")).Content;
         }
 
         private void ChangeListName (string name)
         {
-            ((TextBlock)this.FindName("ListName")).Text = name; 
+            ((CheckBox)this.FindName("ListName")).Content = name; 
         }
 
         private void OpenEditWindow(CheckBox checkBox)
@@ -102,9 +122,59 @@ namespace CheckList
             list.Children.Remove(((Grid)((Menu)((MenuItem)((MenuItem)sender).Parent).Parent).Parent));
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddElementMenu_Click(object sender, RoutedEventArgs e)
         {
             CreateNewListElement("New List Element", false, true);
+        }
+
+        private void MenuItemOpen_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog dialog = new System.Windows.Forms.OpenFileDialog();
+            dialog.Filter = "Text files (*.txt)|*.txt";
+            dialog.Title = "Open";
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                FileSystem.SAVE_DIRECTORY = dialog.FileName;
+                LoadUI();
+            }
+        }
+
+        private void MenuItemSaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();
+            dialog.Filter = "Text files (*.txt)|*.txt";
+            dialog.ShowDialog();
+
+            if (dialog.FileName != "")
+            {
+                FileSystem.SAVE_DIRECTORY = dialog.FileName;
+                SaveUI();
+            }
+        }
+
+        private void MenuItemNewList_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();
+            dialog.Filter = "Text files (*.txt)|*.txt";
+            dialog.ShowDialog();
+
+            if (dialog.FileName != "")
+            {
+                FileSystem.SAVE_DIRECTORY = dialog.FileName;
+                ResetUI();
+                SaveUI();
+            }
+        }
+
+        private void MenuItemSave_Click(object sender, RoutedEventArgs e)
+        {
+            SaveUI();
+        }
+
+        private void MenuItemEditListName_Click (object sender, RoutedEventArgs e)
+        {
+            OpenEditWindow((CheckBox)this.FindName("ListName"));
         }
     }
 }

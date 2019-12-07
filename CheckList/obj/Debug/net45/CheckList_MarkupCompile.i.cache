@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\netcoreapp3.1\
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Debug\net45\
 CheckList
 none
 false
-TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
+TRACE;DEBUG;NETFRAMEWORK;NET45
 C:\Users\cocke\Documents\WPFListApp\CheckList\App.xaml
 2-542986162
 
-71856396097
-1921654412462
+7-946448248
+20-1782185840
 EditNameWindow.xaml;MainWindow.xaml;
 
 False

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheckList"
         mc:Ignorable="d"
-        Title="CheckListApp" Height="450" Width="800">
+        Title="CheckListApp" Height="650" Width="400" Icon="icon.png">
     <Window.Resources>
         <Grid x:Key="ListElement" x:Shared="False" Height="25" HorizontalAlignment="Stretch">
             <CheckBox Content="CheckBox" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="16,0,64,0"/>
@@ -18,12 +18,25 @@
         </Grid>
     </Window.Resources>
     <Grid>
-        <ScrollViewer Margin="0,48,0,0">
+        <Menu VerticalAlignment="Top" Height="18">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New List" Click="MenuItemNewList_Click"/>
+                <MenuItem Header="_Save" Click="MenuItemSave_Click"/>
+                <MenuItem Header="_Save As" Click="MenuItemSaveAs_Click"/>
+                <MenuItem Header="_Open" Click="MenuItemOpen_Click"/>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_List Name" Click="MenuItemEditListName_Click"/>
+                <MenuItem Header="_New Element" Click="AddElementMenu_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <ScrollViewer Margin="0,46,0,0">
             <StackPanel x:Name="ListPanel">
 
             </StackPanel>
         </ScrollViewer>
-        <TextBlock x:Name="ListName" HorizontalAlignment="Left" Margin="16,10,0,0" Text="ListName" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontWeight="Normal" FontStyle="Italic"/>
-        <Button Content="Add" HorizontalAlignment="Right" Margin="0,12,16,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <CheckBox x:Name="ListName" Content="CheckBox" HorizontalAlignment="Left" Margin="6,19,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="20" FontStyle="Italic" IsEnabled="False"/>
     </Grid>
 </Window>

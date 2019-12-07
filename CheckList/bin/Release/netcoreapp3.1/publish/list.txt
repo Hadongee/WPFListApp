@@ -1,0 +1,4 @@
+ListApp
+1Added icon
+1Change size of main window
+0Add multiple list functionality

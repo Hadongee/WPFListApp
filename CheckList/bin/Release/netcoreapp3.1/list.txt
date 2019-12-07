@@ -1,3 +1,7 @@
 Main List
-1Done
-0Not Done
+1Add icon
+1Resize main window
+1Add multiple list functionality
+1Added ability to edit the list title
+1Make shopping list
+1Georgina @ 1:12
