@@ -2,7 +2,6 @@ C:\Users\cocke\Documents\WPFListApp\CheckList\bin\Debug\net45\CheckList.exe.conf
 C:\Users\cocke\Documents\WPFListApp\CheckList\bin\Debug\net45\CheckList.exe
 C:\Users\cocke\Documents\WPFListApp\CheckList\bin\Debug\net45\CheckList.pdb
 C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Debug\net45\CheckList.csprojAssemblyReference.cache
-C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Debug\net45\CheckList.csproj.ResolveComReference.cache
 C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Debug\net45\EditNameWindow.g.cs
 C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Debug\net45\MainWindow.g.cs
 C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Debug\net45\App.g.cs

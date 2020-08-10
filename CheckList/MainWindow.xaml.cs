@@ -100,6 +100,14 @@ namespace CheckList
             StackPanel list = (StackPanel)this.FindName("ListPanel");
             Grid newListElement = (Grid)(this.FindResource("ListElement"));
             CheckBox checkBox = ((CheckBox)newListElement.Children[0]);
+            if(list.Children.Count % 2 == 0)
+            {
+                newListElement.Background = new SolidColorBrush(Color.FromRgb(255, 255, 252));
+            }
+            else
+            {
+                newListElement.Background = new SolidColorBrush(Color.FromRgb(240, 240, 240));
+            }
             checkBox.Content = defaultName;
             checkBox.IsChecked = startDone;
 
@@ -125,6 +133,11 @@ namespace CheckList
         private void AddElementMenu_Click(object sender, RoutedEventArgs e)
         {
             CreateNewListElement("New List Element", false, true);
+        }
+
+        private void MenuItemExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void MenuItemOpen_Click(object sender, RoutedEventArgs e)
@@ -176,5 +189,21 @@ namespace CheckList
         {
             OpenEditWindow((CheckBox)this.FindName("ListName"));
         }
+
+        private void DeleteAllDone_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanel listPanel = (StackPanel)this.FindName("ListPanel");
+
+            for (int i = 0; i < listPanel.Children.Count; i++)
+            {
+                CheckBox listElement = (CheckBox)((Grid)listPanel.Children[i]).Children[0];
+                if ((bool)listElement.IsChecked)
+                {
+                    listPanel.Children.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+        
     }
 }

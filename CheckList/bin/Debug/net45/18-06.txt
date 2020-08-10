@@ -1,0 +1,6 @@
+Prep for g
+1Shopping
+0Clean Kitchen
+1Clean Bathroom
+0Make bed
+1Take out trash

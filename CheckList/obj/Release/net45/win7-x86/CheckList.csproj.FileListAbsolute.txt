@@ -1,0 +1,15 @@
+C:\Users\cocke\Documents\WPFListApp\CheckList\bin\Release\net45\win7-x86\CheckList.exe.config
+C:\Users\cocke\Documents\WPFListApp\CheckList\bin\Release\net45\win7-x86\CheckList.exe
+C:\Users\cocke\Documents\WPFListApp\CheckList\bin\Release\net45\win7-x86\CheckList.pdb
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\EditNameWindow.g.cs
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\MainWindow.g.cs
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\App.g.cs
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\CheckList_MarkupCompile.cache
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\CheckList_MarkupCompile.lref
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\EditNameWindow.baml
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\MainWindow.baml
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\CheckList.g.resources
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\CheckList.AssemblyInfoInputs.cache
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\CheckList.AssemblyInfo.cs
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\CheckList.exe
+C:\Users\cocke\Documents\WPFListApp\CheckList\obj\Release\net45\win7-x86\CheckList.pdb
